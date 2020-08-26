@@ -1,10 +1,11 @@
 # path_planning
 ROS Path Planning (Bezier, Bezier Spline, Cubic Spline, Dubins, Line)
 
-Dependencies:
-  Numpy
-  Scipy
-  Matplotlib
-  Dubins
+## Dependencies
+  * Numpy
+  * Scipy
+  * Matplotlib
+  * Dubins
   
-Run : python Demo.py
+## Execute 
+  * python Demo.py
