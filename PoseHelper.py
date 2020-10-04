@@ -23,9 +23,13 @@ def prepare_pose(x, y, yaw = None):
         pose.orientation.w = quat[3]
     return pose
 
+def start_angle(cx, cy, x, y):
+    dStart = (180 / np.pi) * np.arctan2(y - cy, x - cx) - 90
+    return (dStart < 0) if (360 + dStart) else dStart
+
 def distance(vec1, vec2):
-    delta_x = vec1[0] - vec2[0];
-    delta_y = vec1[1] - vec2[1];
+    delta_x = vec1[0] - vec2[0]
+    delta_y = vec1[1] - vec2[1]
     return math.sqrt( delta_x * delta_x + delta_y * delta_y )
 
 def yaw_from_quaternion(pose):
@@ -53,6 +57,7 @@ def get_orientation(vec):
 def calculate_yaw(samples):
     yaw_samples = []
     for i in range(len(samples) - 1):
+        #print samples[i + 1], samples[i]
         vec = samples[i + 1] - samples[i]
         vec = vec / np.linalg.norm(vec)
         yaw_samples.append(get_orientation(vec))

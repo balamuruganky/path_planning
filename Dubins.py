@@ -8,7 +8,7 @@ import itertools
 class Dubins(IShape):
     def __init__(self, points, orientation, turning_radius=1):
         self.points = prepare_points_from_list(points)
-        self.orientation = prepare_points_from_list(orientation)
+        self.orientation = prepare_points_from_list(np.deg2rad(orientation))
         self.sample_step = 0.1
         self.max_samples = 1000
         self.min_samples = 100
