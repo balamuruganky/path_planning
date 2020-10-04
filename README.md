@@ -1,5 +1,5 @@
 # ROS Navigation - Path Planning
-ROS Path Planning (Bezier, Bezier Spline, Cubic Spline, Dubins, Line)
+ROS Path Planning (Bezier, Bezier Spline, Cubic Spline, Dubins, Line, Circle, Ellipse, Arc)
 
 ## Dependencies
   * Numpy (pip install numpy)
