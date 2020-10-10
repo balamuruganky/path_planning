@@ -53,4 +53,4 @@ if __name__ == '__main__':
 	for obj in objs:
 		samples = yaw_samples = []
 		samples, yaw_samples = obj.sample_points()
-		points_with_yaw_plot(obj.name, obj.points, samples, yaw_samples)
+		points_with_yaw_plot(obj.name, obj.points, samples, yaw_samples, True)

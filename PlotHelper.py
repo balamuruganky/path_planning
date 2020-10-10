@@ -34,7 +34,7 @@ def points_with_yaw_plot(name, points, samples, yaw_samples = None, save_only=Fa
     plt.plot(samples[-1][0],samples[-1][1],"ro",markersize=15)
 
     np_s = np.split(samples,2,axis=1)
-    plt.plot(np_s[0],np_s[1],"mo")
+    plt.plot(np_s[0],np_s[1],"yo")
 
     if yaw_samples is not None:
         for j in range(0, len(yaw_samples)):

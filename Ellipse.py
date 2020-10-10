@@ -95,7 +95,6 @@ class Ellipse(IShape):
         x, y = self.ellipse(step_size)
         samples = np.array((x, y)).T
         yaw_samples = calculate_yaw(samples)
-        print len(samples), len(yaw_samples)
         return samples, yaw_samples
 
 if __name__ == '__main__':
