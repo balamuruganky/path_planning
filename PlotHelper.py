@@ -19,8 +19,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import uuid
 
-def points_with_yaw_plot(name, points, samples, yaw_samples = None):
+def points_with_yaw_plot(name, points, samples, yaw_samples = None, save_only=False):
+    unique_filename = str(uuid.uuid4())
+    name = name + '_' + unique_filename
     plt.figure(name)
 
     np_pts = np.split(points,2,axis=1) 
@@ -42,4 +45,7 @@ def points_with_yaw_plot(name, points, samples, yaw_samples = None):
     plt.axis("equal")
     manager = plt.get_current_fig_manager()
     manager.resize(*manager.window.maxsize())
-    plt.show()
+    if save_only is False:
+        plt.show()
+    else:
+        plt.savefig(name)
