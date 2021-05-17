@@ -35,7 +35,7 @@ class Dubins(IShape):
         self.turning_radius = turning_radius
 
     def validate_points(self):
-		if len(self.points) >= 2:
+		if len(self.points) > 2:
 			self.is_points_valid = False
 		else:
 			self.is_points_valid = True

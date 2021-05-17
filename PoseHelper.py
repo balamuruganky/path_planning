@@ -18,7 +18,7 @@
 
 import numpy as np
 import math
-from geometry_msgs.msg import Pose
+from geometry_msgs.msg import Pose, PoseStamped
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
 def get_position(points):
@@ -40,6 +40,19 @@ def prepare_pose(x, y, yaw = None):
         pose.orientation.z = quat[2]
         pose.orientation.w = quat[3]
     return pose
+
+def prepare_posestamped(x, y, yaw = None):
+    pose_stamped = PoseStamped()
+    pose_stamped.pose.position.x = x
+    pose_stamped.pose.position.y = y
+    pose_stamped.pose.position.z = 0.0
+    if yaw != None:
+        quat = quaternion_from_euler(0.0,0.0,yaw)
+        pose_stamped.pose.orientation.x = quat[0]
+        pose_stamped.pose.orientation.y = quat[1]
+        pose_stamped.pose.orientation.z = quat[2]
+        pose_stamped.pose.orientation.w = quat[3]
+    return pose_stamped
 
 def start_angle(cx, cy, x, y):
     dStart = (180 / np.pi) * np.arctan2(y - cy, x - cx) - 90
