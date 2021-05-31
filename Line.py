@@ -73,7 +73,7 @@ class Line(IShape):
         currPoint = self.points[0]
         nextDist = step_size
 
-        for pt in range((int(total_steps))):
+        for pt in range((int(total_steps) - 1)):
             while( nextDist > ctrlPtDists[ prevCtrlPtInd + 1 ] ):
                 prevCtrlPtInd = (prevCtrlPtInd + 1)
                 currDist = ctrlPtDists[ prevCtrlPtInd ]
